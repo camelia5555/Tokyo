@@ -1432,39 +1432,6 @@
             render();
         }
 
-// 更新 Day 3 行程（不影響其他已儲存資料）
-const day3 = appData.days.find(d => d.day === 3);
-
-if (day3) {
-    day3.locationName = '東京華納兄弟哈利波特影城 ⭢ 三鷹之森美術館';
-
-    day3.items = [
-        {
-            id: 8,
-            type: 'attraction',
-            time: '09:30',
-            title: '東京華納兄弟哈利波特影城',
-            desc: '入場時間 9:30。𖤐tips❶: 建議提前約1小時抵達；𖤐tips❷: 可租借中文語音導覽。丸之內線：新大塚⭢池袋；西武池袋線：池袋⭢豐島園（西武出口出站）。'
-        },
-        {
-            id: 9,
-            type: 'transport',
-            time: '下午',
-            title: '前往三鷹之森美術館',
-            desc: '哈利波特影城參觀結束後前往三鷹。豐島園⭢池袋，再轉JR中央線前往三鷹站，抵達後前往三鷹之森美術館。'
-        },
-        {
-            id: 10,
-            type: 'attraction',
-            time: '15:00',
-            title: '三鷹之森吉卜力美術館',
-            desc: '入館時間待定。𖤐tips：館內禁止攝影，記得預留充足參觀時間。參觀結束後可於三鷹／吉祥寺周邊吃晚餐，再返回大塚。'
-        }
-    ];
-
-    saveAppData();
-}
-
         // 初始化預設日期
         const today = new Date();
         const expDateEl = document.getElementById('expDate');
