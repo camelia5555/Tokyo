@@ -576,6 +576,20 @@
                     hotelNearbyPlaces: parsed.hotelNearbyPlaces || defaultAppData.hotelNearbyPlaces,
                     days: parsed.days || defaultAppData.days
                 };
+                // 只修正這兩個問題
+const clothing = appData.luggageCategories.find(c => c.category === '衣物類');
+if (clothing) {
+    clothing.items = clothing.items.filter(
+        item => item.text !== '手套' && item.text !== '圍巾'
+    );
+}
+
+// 只更新 9/11 的每日行程
+const day3 = appData.days.find(d => d.day === 3);
+if (day3) {
+    day3.locationName = '東京華納兄弟哈利波特影城 ⭢ 三鷹之森美術館';
+    day3.items = defaultAppData.days.find(d => d.day === 3).items;
+}
             }
         } catch (e) {
             console.error('LocalStorage 讀取失敗', e);
